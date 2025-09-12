@@ -211,7 +211,7 @@ begin
     try
       LQuery.Connection := TPgConnection(FConnection.Component);
       LQuery.SQL.Text := FSQL.Text;
-      LParams := FQueryParams.Params;
+      LParams := FQueryParams.Build;
       for I := 0 to Pred(LParams.Count) do
       begin
         LQuery.ParamByName(LParams[I].Name).DataType := LParams[I].DataType;
